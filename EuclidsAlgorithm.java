@@ -9,7 +9,13 @@ public class EuclidsAlgorithm
 
 	public static void main(String[] args)
 	{
-		System.out.println(calculateGCD(20, 8));
+		System.out.println("Non recursive GCD: " + calculateGCD(20, 8));
+		System.out.println(calculateGCD("Non recursive GCD: " + 100, 2));
+		System.out.println("Non recursive GCD: " + calculateGCD(52, 21));
+
+		System.out.println("Recursive GCD: " + calculateGCD(20, 8));
+		System.out.println("Recursive GCD: " + calculateGCD(100, 2));
+		System.out.println("Recursive GCD: " + calculateGCD(52, 21));
 	}
 	
 	/**
@@ -28,5 +34,17 @@ public class EuclidsAlgorithm
 			b = tmp % b;
 		}
 		return a;
+	}
+
+	private static int recursiveGCD(int a, int b)
+	{
+		if(b == 0)
+		{
+			return b;
+		}
+		else 
+		{
+			return recursiveGCD(b, a % b)
+		}
 	}
 }
